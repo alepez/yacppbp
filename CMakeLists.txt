@@ -27,3 +27,8 @@ target_include_directories(yacppbp_bin
 enable_testing()
 include(GoogleTest)
 add_subdirectory(test)
+
+# Hide third party targets, so IDEs like Visual Studio aren't cluttered with
+# too many targets.
+set_property(GLOBAL PROPERTY USE_FOLDERS ON)
+set_target_properties(gmock gmock_main gtest gtest_main PROPERTIES FOLDER hidden_targets)
