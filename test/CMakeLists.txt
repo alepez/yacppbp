@@ -1,3 +1,6 @@
+enable_testing()
+include(GoogleTest)
+
 # Prevent overriding the parent project's compiler/linker
 # settings on Windows
 

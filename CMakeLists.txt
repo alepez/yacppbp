@@ -24,8 +24,6 @@ target_include_directories(yacppbp_bin
         PRIVATE ${PROJECT_SOURCE_DIR}/lib
         )
 
-enable_testing()
-include(GoogleTest)
 add_subdirectory(test)
 
 # Hide third party targets, so IDEs like Visual Studio aren't cluttered with
