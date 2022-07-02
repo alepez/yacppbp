@@ -1,0 +1,6 @@
+include(analysis.cmake)
+include(clang-format.cmake)
+include(clang-tidy.cmake)
+include(gtest.cmake)
+include(utils.cmake)
+include(valgrind.cmake)

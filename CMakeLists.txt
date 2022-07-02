@@ -1,32 +1,21 @@
-cmake_minimum_required(VERSION 3.13)
+cmake_minimum_required(VERSION 3.12)
 
 project(yacppbp)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_library(yacppbp
-        lib/yacppbp/example.cpp
-        )
+# Needed by clang-tidy
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
-add_executable(yacppbp_bin
-        main.cpp
-        )
+enable_testing()
 
-set_target_properties(yacppbp_bin
-        PROPERTIES OUTPUT_NAME yacppbp
-        )
-
-target_link_libraries(yacppbp_bin
-        yacppbp
-        )
-
-target_include_directories(yacppbp_bin
-        PRIVATE ${PROJECT_SOURCE_DIR}/lib
-        )
-
-add_subdirectory(test)
+add_subdirectory(deps)
+add_subdirectory(cmake)
+add_subdirectory(src)
+add_subdirectory(tests)
+#add_subdirectory(examples)
 
 # Hide third party targets, so IDEs like Visual Studio aren't cluttered with
 # too many targets.
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
-set_target_properties(gmock gmock_main gtest gtest_main PROPERTIES FOLDER hidden_targets)
+#set_target_properties(gmock gmock_main gtest gtest_main PROPERTIES FOLDER hidden_targets)

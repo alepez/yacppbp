@@ -1,6 +1,6 @@
 #include <gtest/gtest.h>
 
-#include <yacppbp/example.hpp>
+#include <yacppbp/yacppbp.hpp>
 
 TEST(Example, IsWorking) {
   EXPECT_EQ(example(), 42);
