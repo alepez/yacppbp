@@ -2,6 +2,6 @@
 
 #include <yacppbp/yacppbp.hpp>
 
-TEST(Example, IsWorking) {
+TEST(Yacppbp, IsWorking) {
   EXPECT_EQ(example(), 42);
 }
